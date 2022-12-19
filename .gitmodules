@@ -1,0 +1,6 @@
+[submodule "buildroot"]
+	path = buildroot
+	url = https://github.com/buildroot/buildroot.git
+[submodule "br2-ext-finit"]
+	path = br2-ext-finit
+	url = https://github.com/troglobit/br2-ext-finit.git
