@@ -1,0 +1,19 @@
+#
+# Init Utilities
+#
+# CONFIG_HALT is not set
+# CONFIG_POWEROFF is not set
+# CONFIG_REBOOT is not set
+# CONFIG_INIT is not set
+# CONFIG_LINUXRC is not set
+
+#
+# Miscellaneous Utilities
+#
+# CONFIG_WATCHDOG is not set
+
+#
+# Linux System Utilities
+#
+CONFIG_FEATURE_MOUNT_HELPERS=y
+
