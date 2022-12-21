@@ -20,16 +20,21 @@ Build
 -----
 
     make qemu_x86_64_finit_defconfig
+    make
+
+The resulting image files are placed `output/images/` and a Qemu host
+program is available in `output/host/bin/`.
 
 
 Run
 ---
 
-    qemu-system-x86_64 -M pc -enable-kvm -nographic                       \
-	    -kernel output/images/bzImage                                     \
-        -drive file=output/images/rootfs.ext2,if=virtio,format=raw        \
-        -append "rootwait root=/dev/vda console=tty1 console=ttyS0 quiet" \
-        -net nic,model=virtio -net user
+The `external.mk` file extends Buildroot with a `run` command that calls
+the Qemu host program with the generated image files:
+
+    make run
+
+> **Note:** use `Ctrl-a x` to exit qemu, and `Ctrl-a c` to toggle console/monitor
 
 [1]: https://github.com/troglobit/finit/
 [2]: https://buildroot.org/downloads/manual/manual.html
