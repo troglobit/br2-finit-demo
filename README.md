@@ -18,7 +18,7 @@ filesystem (ext4) is built around BusyBox, with the following changes:
 
 The rest of this tree is basically just glue to make everything fit in
 with the Buildroot external concept, as described in the [excellent
-manual][2].  Check it out for helpful hints and how to extend on this
+manual][3].  Check it out for helpful hints and how to extend on this
 demo with more services, or even customize it for your own project.
 
 > Notice the use of an external, `br2-ext-finit`, providing only the
@@ -144,5 +144,5 @@ There is also a [discussion forum][2] open for general questions about
 [Finit][1].
 
 [1]: https://github.com/troglobit/finit#introduction
-[2]: https://buildroot.org/downloads/manual/manual.html
-[3]: https://github.com/troglobit/finit/discussions
+[2]: https://github.com/troglobit/finit/discussions
+[3]: https://buildroot.org/downloads/manual/manual.html
