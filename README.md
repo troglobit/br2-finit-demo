@@ -4,16 +4,19 @@ Buildroot Demo with Fast Init
 <img align="right" src="screenshot.png" alt="Finit starting up Buildroot">
 
 This is an example of how [Finit][1] can be used with Buildroot instead
-of the default BusyBox init, or systemd.
+of the default BusyBox init, or systemd.  Notice the use of an external,
+`br2-ext-finit`, providing the necessary packages and root skeleton with
+a wide range of service configurations.
 
-The provided defconfig builds a Qemu bootable kernel and root filesystem
-(ext4) built around BusyBox.  With the following changes to its default
-configuration:
+The provided `configs/qemu_x86_64_finit_defconfig` is the standard Qemu
+defconfig from Buildroot with Finit enabled as the default system init.
+The kernel targets only a Qemu machine and the root filesystem (ext4) is
+built around BusyBox, with the following changes:
 
  - Disable BusyBox init
  - Disable BusyBox poweroff/halt/reboot commands (for init)
  - Enable mount helpers (for fstab tricks later)
- - Enable a few services: httpd, ntpd, udhcpd, dnsd, ...
+ - Enable a few services: `httpd`, `ntpd`, `udhcpd`, `dnsd`, `telnetd`, ...
 
 The rest of this tree is just glue to fit in with the Buildroot external
 concept, as [described in the excellent manual][2].
