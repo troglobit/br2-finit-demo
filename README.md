@@ -16,12 +16,15 @@ filesystem (ext4) is built around BusyBox, with the following changes:
  - Enable mount helpers (for fstab tricks later)
  - Enable a few services: `httpd`, `ntpd`, `udhcpd`, `dnsd`, `telnetd`, ...
 
-The rest of this tree is just glue to fit in with the Buildroot external
-concept, as [described in the excellent manual][2].
+The rest of this tree is basically just glue to make everything fit in
+with the Buildroot external concept, as described in the [excellent
+manual][2].  Check it out for helpful hints and how to extend on this
+demo with more services, or even customize it for your own project.
 
 > Notice the use of an external, `br2-ext-finit`, providing only the
 > necessary Finit package(s) and a root skeleton with a wide range of
-> service configurations.  See `initctl ls` at runtime (below).
+> service configurations.  If you already have a Buildroot system, it
+> comes with all you need to get up and running.
 
 
 Build
@@ -105,9 +108,9 @@ total restarts counter continues counting.
 Access
 ------
 
-To run Qemu unprivileged, [without sudo][3], the guest runs with in user
-networking mode.  Meaning the guest is hidden behind a NAT and regular
-services cannot be reached without a port forward.
+To be able to run Qemu unprivileged, without sudo, the guest runs in
+user networking mode.  Meaning the guest is hidden behind a NAT and
+regular services cannot be reached without a port forward.
 
 When calling `make run` the following ports are forwarded from the guest
 to the host's 80xx port range:
@@ -131,6 +134,15 @@ You can even reach it from another host on your LAN by replacing the
 `localhost` name with the name, or IP address, of the host you are
 running Qemu on.
 
-[1]: https://github.com/troglobit/finit/
+
+Fin
+---
+
+There is of course a lot more to cover.  Please let me know if you are
+curious about some other aspect that would be suitable for a blog post.
+There is also a [discussion forum][2] open for general questions about
+[Finit][1].
+
+[1]: https://github.com/troglobit/finit#introduction
 [2]: https://buildroot.org/downloads/manual/manual.html
-[3]: https://troglobit.com/2016/12/11/a-life-without-sudo/
+[3]: https://github.com/troglobit/finit/discussions
