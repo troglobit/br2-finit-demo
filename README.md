@@ -1,6 +1,8 @@
 Buildroot Demo with Fast Init
 =============================
 
+<img align="right" src="screenshot.png" alt="Finit starting up Buildroot">
+
 This is an example of how [Finit][1] can be used with Buildroot instead
 of the default BusyBox init, or systemd.
 
