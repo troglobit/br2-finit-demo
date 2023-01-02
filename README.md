@@ -115,12 +115,12 @@ regular services cannot be reached without a port forward.
 When calling `make run` the following ports are forwarded from the guest
 to the host's 80xx port range:
 
-| **Host port** | **Guest port** | **Service** |
-|---------------|----------------|-------------|
-| tcp/8021      | 21             | FTP         |
-| tcp/8022      | 22             | SSH         |
-| tcp/8023      | 23             | Telnet      |
-| tcp/8080      | 80             | HTTP        |
+| **Service** | **Guest port** | **Host port** |
+|-------------|----------------|---------------|
+| FTP         | 21             | tcp/8021      |
+| SSH         | 22             | tcp/8022      |
+| Telnet      | 23             | tcp/8023      |
+| HTTP        | 80             | tcp/8080      |
 
 So, to test login via telnet from your host:
 
