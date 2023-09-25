@@ -35,7 +35,7 @@ the top-level directory, activate the defconfig and make:
 
     git clone https://github.com/troglobit/br2-finit-demo.git
     cd br2-finit-demo/
-    make qemu_x86_64_finit_defconfig
+    make qemu_x86_64_defconfig
     make
 
 The resulting image files are placed `output/images/` and a Qemu host

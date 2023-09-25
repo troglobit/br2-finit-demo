@@ -1,4 +1,4 @@
-export BR2_EXTERNAL := $(CURDIR):$(CURDIR)/br2-ext-finit
+export BR2_EXTERNAL := $(CURDIR)/br2-ext-finit:$(CURDIR)
 export PATH         := $(CURDIR)/utils:$(PATH)
 
 ARCH   ?= $(shell uname -m)
