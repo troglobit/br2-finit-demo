@@ -3,11 +3,11 @@ Buildroot Demo with Fast Init
 
 <img align="right" src="screenshot.png" alt="Finit starting up Buildroot">
 
-This is an example of how [Finit][1] can be used with Buildroot instead
-of the default BusyBox init, or systemd.
+This is an example of how FastInit ([Finit][1]) can be used with Buildroot
+instead of the default BusyBox init, or systemd.
 
 The provided defconfig (see below) is the default Buildroot Qemu x86_64
-defconfig, with Finit enabled as the default system init.  The kernel is
+defconfig with Finit enabled as the default system init.  The kernel is
 the same as Buildroot, targeting only a basic Qemu PC machine.  The root
 filesystem (ext4) is built around BusyBox, with the following changes:
 
