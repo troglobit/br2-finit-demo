@@ -41,3 +41,30 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           path: output/br2-finit-demo.tgz
+  release:
+    if: ${{github.repository_owner == 'troglobit' && github.ref_name == 'main'}}
+    name: Upload Latest Build
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v3
+      - uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          omitName: true
+          omitBody: true
+          omitBodyDuringUpdate: true
+          prerelease: true
+          tag: "latest"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "artifact/*"
+      - name: Summary
+        run: |
+          cat <<EOF >> $GITHUB_STEP_SUMMARY
+          # Latest Build Complete! :rocket:
+          
+          For the public download links of these build artifacts, please see:
+           <https://github.com/troglobit/br2-finit-demo/releases/tag/latest>
+          EOF
