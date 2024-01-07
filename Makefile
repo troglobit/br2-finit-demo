@@ -1,3 +1,7 @@
+# Wrapper makefile to check for a .config and verify submodules
+# This BR2_EXTERNAL extends Buildroot with the Finit init system
+# Buildroot still handles everything about the build itself.
+
 export BR2_EXTERNAL := $(CURDIR)/br2-ext-finit:$(CURDIR)
 
 ARCH   ?= $(shell uname -m)
