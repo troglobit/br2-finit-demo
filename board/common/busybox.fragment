@@ -1,4 +1,10 @@
 #
+# Settings
+#
+CONFIG_FEATURE_PIDFILE=y
+CONFIG_PID_FILE_PATH="/var/run"
+
+#
 # Init Utilities
 #
 # CONFIG_HALT is not set
